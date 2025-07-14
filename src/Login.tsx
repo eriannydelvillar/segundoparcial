@@ -21,9 +21,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
         <div className="login-form">
           <h2>Iniciar sesión</h2>
+          <h4>Erianny Del Villar y Dahiana Jerez</h4>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <label>Email:</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 id="email"
@@ -31,11 +32,12 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="input-field"
+                placeholder="tu.email@ejemplo.com"
               />
             </div>
 
             <div className="input-group">
-              <label>Contraseña:</label>
+              <label htmlFor="password">Contraseña:</label>
               <input
                 type="password"
                 id="password"
@@ -43,6 +45,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 className="input-field"
+                placeholder="********"
               />
             </div>
 

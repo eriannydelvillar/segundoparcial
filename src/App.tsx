@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './styles.css';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home';
 import Navbar from './Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Products from './Products';  // Tu componente CRUD
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,7 +37,11 @@ const App: React.FC = () => {
           {!isAuthenticated ? (
             <Route path="/*" element={<Login onLogin={handleLogin} />} />
           ) : (
-            <Route path="/" element={<Home userName={userName} />} />
+            <>
+              <Route path="/" element={<Home userName={userName} />} />
+              <Route path="/Products" element={<Products />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </>
           )}
         </Routes>
       </div>

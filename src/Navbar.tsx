@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./logos.png";
 
 interface NavbarProps {
   onLogout: () => void;
@@ -9,26 +8,32 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onLogout, userName }) => {
   return (
-    <nav className="navba-left">
-      <div className="navbar-logo">
-        <img src={logo} alt="Logo" />
-        <span className="username"> {userName}</span>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <span className="username">{userName}</span>
       </div>
+
+      <h4>Erianny Del Villar y Dahiana Jerez</h4>
+
       <ul className="navbar-menu">
         <li>
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">Inicio</Link>
-        <Link to="/">Sobre Nosotros</Link>
-         <Link to="/">Galeria</Link>
+          <Link to="/products">CRUD</Link>
         </li>
         <li>
-          <button onClick={onLogout}>Cerrar sesion</button>
+          <Link to="/about">Sobre Nosotros</Link>
+        </li>
+        <li>
+          <Link to="/gallery">Galería</Link>
         </li>
       </ul>
-      <div className="navbar-user">
-        <span>Welcome, {userName}</span>
+
+      <div className="navbar-right">
+        <button onClick={onLogout} className="logout-button">
+          Cerrar sesión
+        </button>
       </div>
     </nav>
   );

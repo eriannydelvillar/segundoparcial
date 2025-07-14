@@ -1,134 +1,152 @@
-/* Estilos generales */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('/public/background.jpg'); /* Imagen de fondo */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    
+/* --- Reset y estilos base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Centrar el contenido */
-.content-container {
+/* --- Estilos Generales --- */
+html, body {
+  height: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #2e2e3a;
+  line-height: 1.6;
+  background: none;
+  overflow: auto;
+}
+
+/* --- Navbar compacto con imagen pequeña --- */
+.navbar {
+  padding: 0.4rem 1rem;
+  background-color: #e59898;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(237, 169, 169, 0.3);
+  font-size: 0.85rem;
+  height: 48px;
+}
+
+.navbar-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navbar-logos img {
+  width: 24px;      /* más pequeño */
+  height: 24px;     /* más pequeño */
+  object-fit: contain;
+  border-radius: 4px; /* opcional, para que quede más lindo */
+}
+
+/* Menú de navegación */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a:focus {
+  color: #b34747;
+  text-decoration: underline;
+  outline: none;
+}
+
+.navbar-user {
+  font-size: 0.7rem;
+}
+
+/* --- Responsive Navbar --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo {
+    flex: 1 1 50%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-menu {
+    flex: 1 1 100%;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .navbar-user {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+
+/* --- Login --- */
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.content {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+.login-box {
+    background: rgba(246, 168, 168, 0.9);
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 400px; /* tamaño de la caja de contenido */
-    height: 450px;
-
-}
-/* Estilos de la barra de navegación */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
-    padding: 10px 20px;
-    color: white;
+    width: 350px;
 }
 
-.navbar-left {
-    display: flex;
-    align-items: center;
-}
-.logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-.username {
-    font-size: 18px;
-    font-weight: bold;
-}
-.navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.navbar-menu li {
-    display: inline;
-}
-.navbar-menu a, .logout-button {
-    color: white;
-    text-decoration: none;
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.logout-button {
-    font-weight: bold;
-    background: red;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* Contenedor principal del login */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-}
-
-.login-box {
-    display: flex;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    flex-direction: column;
-    align-items: center;
-}
 .login-image {
-    width: 100px;
-    height: 100px;
-    background-image: url('./login.png'); /* Imagen de login */
+    width: 80px;
+    height: 80px;
+    background-image: url('./login.png');
     background-size: cover;
     background-position: center;
-    /*border-radius: 50%;*/
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
 }
-.login-form {
-    width: 100%;
-    text-align: center;
-}
-h2 {
+
+.login-form h2 {
     color: #333;
-    font-size: 24px;
-    margin-bottom: 15px;
 }
+
 .input-group {
     margin-bottom: 15px;
     text-align: left;
 }
+
 .input-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: #555;
 }
+
 .input-field {
-    width: 350px;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
+
 .login-button {
     width: 100%;
     padding: 10px;
@@ -136,22 +154,147 @@ h2 {
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s;
 }
+
 .login-button:hover {
     background-color: #0056b3;
 }
+
 .login-links {
     margin-top: 10px;
 }
+
 .login-links a {
     color: #007bff;
     text-decoration: none;
-    margin-right: 10px;
+    margin: 0 5px;
     font-size: 14px;
 }
+
 .login-links a:hover {
     text-decoration: underline;
+}
+
+/* --- Home --- */
+.home-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.home-container h1 {
+    font-size: 32px;
+}
+
+.home-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.home-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Products / CRUD --- */
+.Products {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #2e2e3a;
+}
+
+.Products h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+}
+
+/* --- ProductForm --- */
+.product-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.product-form input,
+.product-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.product-form button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-form button:hover {
+  background-color: #218838;
+}
+
+
+/* --- ProductList --- */
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-list li {
+  background: #fff;
+  border: 1px solid #e3e4f1;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-list .info {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.product-list .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.product-list .actions button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-list .actions button:hover {
+  background-color: #574bff;
 }
