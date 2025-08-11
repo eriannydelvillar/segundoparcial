@@ -14,7 +14,7 @@ export default function ProductList({ products, onDelete, onEdit }: Props) {
         <ul>
           {products.map((p) => (
             <li key={p.id} className="product-item">
-              <strong>{p.name}</strong> - ${p.price}
+              <strong>{p.name}</strong>  ${p.price}
               <div className="product-actions">
                 <button onClick={() => onEdit(p)} className="edit-button">Editar</button>
                 <button onClick={() => onDelete(p.id)} className="delete-button">Eliminar</button>

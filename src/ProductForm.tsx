@@ -54,6 +54,8 @@ export default function ProductForm({ onSubmit, selectedProduct }: Props) {
       />
 
       <button type="submit" className="save-button">Guardar</button>
+
+      
     </form>
   );
 }

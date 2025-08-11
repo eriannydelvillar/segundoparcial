@@ -20,13 +20,16 @@ const Navbar: React.FC<NavbarProps> = ({ onLogout, userName }) => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/products">CRUD</Link>
+          <Link to="/products">Administrar Productos</Link>
         </li>
         <li>
-          <Link to="/about">Sobre Nosotros</Link>
+          <Link to="/About">Sobre Nosotros</Link>
         </li>
         <li>
           <Link to="/gallery">Galería</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contacto</Link>
         </li>
       </ul>
 

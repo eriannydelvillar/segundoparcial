@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './Login';
 import Home from './Home';
 import Navbar from './Navbar';
-import Products from './Products';  // Tu componente CRUD
+import Products from './Products'; 
+import About from './About';        
+import Gallery from './Gallery';     
+import Contact from './contact';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,7 +42,10 @@ const App: React.FC = () => {
           ) : (
             <>
               <Route path="/" element={<Home userName={userName} />} />
-              <Route path="/Products" element={<Products />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/about" element={<About />} /> 
+              <Route path="/Gallery" element={<Gallery />} />
+              <Route path="/Contact" element={<Contact />} />
               <Route path="*" element={<Navigate to="/" />} />
             </>
           )}
